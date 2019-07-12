@@ -1,0 +1,14 @@
+.galleryImage{
+    border: 1px solid black;
+    height: 500px;
+    margin: 0 auto;
+}
+
+.galleryButton{
+    background-color: transparent;
+    border: none;
+}
+
+.galleryButton svg{
+    height: 500px;
+}

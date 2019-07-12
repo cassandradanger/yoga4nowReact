@@ -20,6 +20,10 @@ class InfoPage extends Component {
     })
   }
 
+  handleSubmit = () => {
+    this.props.dispatch({type: 'POST_POSE', payload: this.state})
+  }
+
   render(){
     return(
       <div>
@@ -50,6 +54,10 @@ class InfoPage extends Component {
           <p>{this.state.poseName}</p>
           <p>{this.state.purpose}</p>
           <img className="imgThumb" src={this.state.imageUrl}/>
+          <br/>
+          {this.state.poseName.length > 0 &&
+            <button onClick={this.handleSubmit}>POST</button>
+          }
         </div>
       </div>
     )

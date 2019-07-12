@@ -20,4 +20,16 @@ router.get('/', (req, res) => {
     .catch(() => res.sendStatus(500));
 });
 
+router.post('/', (req, res) => {  
+  console.log("REQ DOT BODY", req.body)
+  const name = req.body.poseName;
+  const purpose = req.body.purpose;
+  const url = req.body.imageUrl;
+
+  const queryText = 'INSERT INTO "pose" ("name", "purpose", "imageUrl") VALUES ($1, $2, $3)';
+  pool.query(queryText, [name, purpose, url])
+    .then(() => res.sendStatus(201))
+    .catch(() => res.sendStatus(500));
+});
+
 module.exports = router;
