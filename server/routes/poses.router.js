@@ -10,7 +10,7 @@ const router = express.Router();
 // The only thing different from this and every other post we've seen
 // is that the password gets encrypted before being inserted
 router.get('/', (req, res) => { 
-  console.log("req.boyd", req.body);
+  console.log("req.body", req.body);
   const queryText = 'SELECT * FROM "pose"';
   pool.query(queryText)
     .then((result) => {

@@ -6,7 +6,7 @@ class AboutPage extends Component {
   state = {
     poseName: '',
     imageUrl: '',
-    purpose: ''
+    purpose: 'Headache'
   }
 
   componentDidMount = () => {
@@ -36,14 +36,14 @@ class AboutPage extends Component {
               <label htmlFor="purpose">Select Purpose: </label>
               <select onChange={(e) => this.handleChange(e, 'purpose')}>
                 {this.props.purpose.map((item) => {
-                  return <option key={item.id} value={item.purpose}>{item.purpose}</option>
+                  return <option key={item.id} value={item.name}>{item.name}</option>
                 })}
               </select>
           </>
           }
           <button onClick={this.handleSubmit}>YOGA!</button>
         </div>
-        <PosesGallery posesArray={this.props.poses}/>
+        <PosesGallery className="galleryStuff" posesArray={this.props.poses}/>
       </div>
     )
   }

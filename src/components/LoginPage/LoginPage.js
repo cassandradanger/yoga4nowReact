@@ -7,6 +7,9 @@ class LoginPage extends Component {
     password: '',
   };
 
+  componentDidMount(){
+    console.log( "Duck" == "duck");
+  }
   login = (event) => {
     event.preventDefault();
 
